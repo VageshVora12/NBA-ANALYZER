@@ -38,3 +38,6 @@ const playerSchema = new Schema({
     },
 
 })
+
+const GetPlayers = mongoose.model('getPlayers',playerSchema);
+exports.module = GetPlayers; 

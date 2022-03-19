@@ -1,14 +1,18 @@
-const express = require('express') ;
-const mongoose = require('mongoose');
-const cors = require('cors');
+var express = require('express') ;
+var mongoose = require('mongoose');
+var cors = require('cors');
+var playerRoute = require('./routes/playerRoute.js');
 
 require('dotenv').config();
 
-const app = express();
-const port = process.env.PORT || 9000;
+var app = express();
+var port = process.env.PORT || 9000;
 app.use(express.json());
 app.use(cors());
-const uri = process.env.ATLAS_URI;
+
+app.use('/player',playerRoute)
+
+var uri = process.env.ATLAS_URI;
 mongoose.connect(uri)
     .then(() => {
         console.log("mongodb started.");
