@@ -201,10 +201,25 @@ app.get('/statistics',(req,res) =>{
 })
 
 
+// season averages
+// empty 
 
 
-
-
+app.get('/average/season',(req,res) =>{
+    axios.get('https://www.balldontlie.io/api/v1/season_averages')
+    .then(function(response){
+        console.log(response.data.data);
+        let data= '';
+            data += '<br>' + response.data.data + '<br>'  ;
+        res.send(data);
+    })
+    .catch(function (err) {
+        console.log(err);
+        })
+        .then(function(){
+            console.log('Process Executed');
+        })
+})
 
 
 
