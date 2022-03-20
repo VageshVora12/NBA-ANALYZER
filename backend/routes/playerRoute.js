@@ -1,9 +1,9 @@
-var express = require('express');
-var getPlayers = require('../apis/players.js');
+// var express = require('express');
+// var getPlayers = require('../apis/players.js');
 
 
-const playerRoute = express.Router();
+// const playerRoute = express.Router();
 
-playerRoute.get("/get-players",getPlayers);
+// playerRoute.get("/get-players",getPlayers);
 
-module.exports = playerRoute;
+// module.exports = playerRoute;
