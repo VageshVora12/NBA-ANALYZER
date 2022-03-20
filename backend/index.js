@@ -188,9 +188,9 @@ app.get('/statistics',(req,res) =>{
         // console.log(response.data.data);
         let data = '';
         for(i=0;i<response.data.data.length;i++){
-            data += 'Stats for seasons 2018 & 2015<br><br>' + JSON.stringify(response.data.data[i]) + '<br>'  ;
+            data += '<br><br>' + JSON.stringify(response.data.data[i]) + '<br>'  ;
         }
-        res.send(data);
+        res.send("Stats for seasons 2018 & 2015<br><br>"+data);
     })
     .catch(function (err) {
         console.log(err);
