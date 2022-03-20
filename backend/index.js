@@ -96,13 +96,63 @@ app.get('/team/:id',(req,res) =>{
 
 
 
+// get data for all teams
 
 
+app.get('/game/all-games',(req,res) =>{
+    axios.get('https://www.balldontlie.io/api/v1/games')
+    .then(function(response){
+        console.log(response.data.data);
+        let data= '';
+        for(i=0;i<response.data.data.length;i++){
+            // data += 'TEAM '+ (i+1) + "<br>TEAM ID: " + response.data.data[i].id + '<br>DATE:' + response.data.data[i].date + '<br>DATE:' + response.data.data[i].date + '<br>FULL NAME:' + response.data.data[i].full_name+ "<br>NAME: " + response.data.data[i].name + '<br>ABBREVIATION: ' + response.data.data[i].abbreviation + '<br>CITY: ' + response.data.data[i].city + '<br>CONFERENCE: ' + response.data.data[i].conference + '<br>DIVISION: ' + response.data.data[i].division + '<br><br><br>';
+            data += '<br>' + JSON.stringify(response.data.data[i]) + '<br>'  ;
+        }
+        res.send(data);
+    })
+    .catch(function (err) {
+        console.log(err);
+        })
+        .then(function(){
+            console.log('Process Executed');
+        })
+})
 
 
+// ?seasons[]=2018&team_ids[]=1 will return games for team_id 1 for the 2018-2019 season.
+// get data for all games played by specific team using its id
 
 
+app.get('/games/:id',(req,res) =>{
+    axios.get('https://www.balldontlie.io/api/v1/games?seasons[]=2018&team_ids[]='+req.params['id'])
+    .then(function(response){
+        // console.log(response.data.data);
+        res.send(response.data.data[0]);
+    })
+    .catch(function (err) {
+        console.log(err);
+        })
+        .then(function(){
+            console.log('Process Executed');
+        })
+})
 
+
+// get a specific game b its id
+
+app.get('/game/:id',(req,res) =>{
+    axios.get('https://www.balldontlie.io/api/v1/games/'+req.params['id'])
+    .then(function(response){
+        // console.log(response.data.data);
+        res.send(response.data);
+    })
+    .catch(function (err) {
+        console.log(err);
+        })
+        .then(function(){
+            console.log('Process Executed');
+        })
+})
 
 
 
