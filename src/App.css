@@ -1,5 +1,10 @@
+body{
+  background-color: aliceblue ;
+}
+
 .App {
   text-align: center;
+  height: 8000px;
 }
 
 .App-logo {

@@ -68,7 +68,7 @@ export default function SearchAppBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="fixed">
         <Toolbar>
           <IconButton
             edge="start"
@@ -79,7 +79,7 @@ export default function SearchAppBar() {
             <MenuIcon />
           </IconButton>
           <Typography className={classes.title} variant="h5" noWrap>
-          <a href='#' style={{textDecoration:'none',color:'white'}}>Material-UI</a>
+          <a href='#materialui' style={{textDecoration:'none',color:'white'}}>Material-UI</a>
           </Typography>
           <Typography className={classes.title} variant="h6" noWrap>
           <a href='#nba' style={{textDecoration:'none',color:'white'}}>NBA</a>

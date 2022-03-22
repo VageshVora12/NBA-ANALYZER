@@ -1,50 +1,41 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
+import { Card,CardContent,Typography,CardActions,Button,Grid } from '@material-ui/core';
 
-const useStyles = makeStyles({
-  root: {
-    maxWidth: 345,
-  },
-});
+const MyCard = ({game})=> {
 
-export default function ImgMediaCard() {
-  const classes = useStyles();
+    const getGameCart=()=>{
+        return (
+            <Card style={{marginTop:'20px'}}>
+                <CardContent>
+                    <Grid container justify='center' alignItems='center' spacing={4}>
+                        <Grid item>
+                            <Typography variant = 'h5'> First Team</Typography>
 
-  return (
-    <Card className={classes.root}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          alt="Contemplative Reptile"
-          height="140"
-          image="/static/images/cards/contemplative-reptile.jpg"
-          title="Contemplative Reptile"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            Lizard
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-        <Button size="small" color="primary">
-          Share
-        </Button>
-        <Button size="small" color="primary">
-          Learn More
-        </Button>
-      </CardActions>
-    </Card>
-  );
+                        </Grid>
+                        <Grid item>
+                            <img style={{width:'85px'}} src = {require('../images/versus-4.png')} alt='vs.img couldnt load'></img>
+                        </Grid>
+                        <Grid item>
+                            <Typography variant = 'h5'>Second Team</Typography>
+                        </Grid>
+
+                    </Grid>
+                </CardContent>
+                <CardActions>
+                    <Grid container justify = 'center'>
+                    <Button item variant = 'contained' color = 'primary'>Show Detail</Button>
+                    <Button item variant = 'contained' color = 'primary' style={{marginLeft:'5px'}}>{new Date().toString()}</Button>
+                    </Grid>
+
+                </CardActions>
+
+            </Card>
+        );
+    }
+  
+    return getGameCart();
+
+
 }
+
+export default MyCard;
