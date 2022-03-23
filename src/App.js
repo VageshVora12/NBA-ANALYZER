@@ -39,9 +39,9 @@ function App() {
       <h2><p style={{color:"skyblue"}}>This is NBA Analayzer</p></h2>
       <Button variant='contained' color='primary'>Get Started</Button><br></br><br></br><br></br><br></br><br></br>
       <a href="/stats" style={{textDecoration:'none',color:'blue'}}>ALL STATS</a><br></br>
-      <a href="http://localhost:9000/game/all-games" style={{textDecoration:'none',color:'blue'}}>ALL GAMES</a><br></br>
-      <a href="http://localhost:9000/player/all-players" style={{textDecoration:'none',color:'blue'}}>ALL PLAYERS</a><br></br>
-      <a href="http://localhost:9000/team/all-teams" style={{textDecoration:'none',color:'blue'}}>ALL TEAMS</a><br></br>
+      <a href="https://enacton-backend.herokuapp.com/game/all-games" style={{textDecoration:'none',color:'blue'}}>ALL GAMES</a><br></br>
+      <a href="https://enacton-backend.herokuapp.com/player/all-players" style={{textDecoration:'none',color:'blue'}}>ALL PLAYERS</a><br></br>
+      <a href="https://enacton-backend.herokuapp.com/team/all-teams" style={{textDecoration:'none',color:'blue'}}>ALL TEAMS</a><br></br>
       <h1>Welcome to NBA</h1>
 
 <Grid container>

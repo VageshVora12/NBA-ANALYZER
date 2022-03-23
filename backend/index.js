@@ -253,7 +253,7 @@ app.get('/',function(req,res){
 
 });
 
-app.listen(9000, function () {
+app.listen(process.env.PORT || 9000, function () {
     console.log(`SERVER is running on port: ${port}`);
 }
 )
