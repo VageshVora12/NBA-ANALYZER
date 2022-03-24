@@ -7,6 +7,7 @@ import InputBase from '@material-ui/core/InputBase';
 import { alpha, makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -79,16 +80,16 @@ export default function SearchAppBar() {
             <MenuIcon />
           </IconButton>
           <Typography className={classes.title} variant="h5" noWrap>
-          <a href='#materialui' style={{textDecoration:'none',color:'white'}}>Material-UI</a>
+          <Link to='/material-ui' style={{textDecoration:'none',color:'white'}}>Material-UI</Link>
           </Typography>
           <Typography className={classes.title} variant="h6" noWrap>
-          <a href='#nba' style={{textDecoration:'none',color:'white'}}>NBA</a>
+          <Link to='/nba' style={{textDecoration:'none',color:'white'}}>NBA</Link>
           </Typography>
           <Typography className={classes.title} variant="h6" noWrap>
-          <a href='#best-players' style={{textDecoration:'none',color:'white'}}>BEST PLAYERS</a>
+          <Link to='/best-players' style={{textDecoration:'none',color:'white'}}>BEST PLAYERS</Link>
           </Typography>
           <Typography className={classes.title} variant="h6" noWrap>
-            <a href='#best-games' style={{textDecoration:'none',color:'white'}}>BEST GAMES</a>
+            <Link to='/best-games' style={{textDecoration:'none',color:'white'}}>BEST GAMES</Link>
           </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>

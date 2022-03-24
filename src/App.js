@@ -1,67 +1,56 @@
 import './App.css';
-import { Button } from '@material-ui/core';
 import SearchAppBar from './components/Navbar';
-import MyCard from './components/MyCard';
-import { getGames } from './api/Api';
 import React,{ useEffect,useState } from 'react';
-import { Grid } from '@material-ui/core';
+import { Router,Routes,Route, Link } from 'react-router-dom';
+import Nba from './components/Nba';
+import Home from './components/Home';
+import Players from './components/Players';
 import Stats from './components/Stats';
-import { Router,Routes,Route } from 'react-router-dom';
+import Teams from './components/Teams';
+import Seasons from './components/Seasons';
+import BestGames from './components/BestGames';
+import BestPlayers from './components/BestPlayers';
+
+
 function App() {
 
 
-  const [games,setGames] =  useState([]);
-
- useEffect(() => { 
-   getGames()
-    .then((data) => {
-      setGames(data.data);
-      console.log(data.data);
-      // console.log(game);
-    })
-    .catch((error) => console.log('ERROR: could not load data',error))
-  }, []);
-  
 
   return (
     <>
     <div className="App">
       <SearchAppBar></SearchAppBar>
-    <div class="topnav" style={{backgroundColor:'#666',overflow:'hidden',marginTop:'60px',position:'sticky'}}>
-  <a class="active" href="#home" style={{float:'left',color:'#2f2f2',textAlign:'center',padding:'14px 16px',textDecoration:'none',fontSize:'17px'}}>Home</a>
-  <a href="#stats" style={{float:'left',color:'#2f2f2',textAlign:'center',padding:'14px 16px',textDecoration:'none',fontSize:'17px'}}>Stats</a>
-  <a href="#players" style={{float:'left',color:'#2f2f2',textAlign:'center',padding:'14px 16px',textDecoration:'none',fontSize:'17px'}}>Players</a>
-  <a href="#teams" style={{float:'left',color:'#2f2f2',textAlign:'center',padding:'14px 16px',textDecoration:'none',fontSize:'17px'}}>Teams</a>
-  <a href="#seasons" style={{float:'left',color:'#2f2f2',textAlign:'center',padding:'14px 16px',textDecoration:'none',fontSize:'17px'}}>Seasons</a>
+      
+  <div class="topnav" style={{backgroundColor:'#666',overflow:'hidden',marginTop:'60px',position:'sticky'}}>
+  <Link class="active" to="/home" style={{float:'left',color:'#2f2f2',textAlign:'center',padding:'14px 16px',textDecoration:'none',fontSize:'17px'}}>Home</Link>
+  <Link to="/stats" style={{float:'left',color:'#2f2f2',textAlign:'center',padding:'14px 16px',textDecoration:'none',fontSize:'17px'}}>Stats</Link>
+  <Link to="/players" style={{float:'left',color:'#2f2f2',textAlign:'center',padding:'14px 16px',textDecoration:'none',fontSize:'17px'}}>Players</Link>
+  <Link to="/teams" style={{float:'left',color:'#2f2f2',textAlign:'center',padding:'14px 16px',textDecoration:'none',fontSize:'17px'}}>Teams</Link>
+  <Link to="/seasons" style={{float:'left',color:'#2f2f2',textAlign:'center',padding:'14px 16px',textDecoration:'none',fontSize:'17px'}}>Seasons</Link>
 
 </div>
 
-      <h2><p style={{color:"skyblue"}}>This is NBA Analayzer</p></h2>
-      <Button variant='contained' color='primary'>Get Started</Button><br></br><br></br><br></br><br></br><br></br>
-      <a href="/stats" style={{textDecoration:'none',color:'blue'}}>ALL STATS</a><br></br>
-      <a href="https://enacton-backend.herokuapp.com/game/all-games" style={{textDecoration:'none',color:'blue'}}>ALL GAMES</a><br></br>
-      <a href="https://enacton-backend.herokuapp.com/player/all-players" style={{textDecoration:'none',color:'blue'}}>ALL PLAYERS</a><br></br>
-      <a href="https://enacton-backend.herokuapp.com/team/all-teams" style={{textDecoration:'none',color:'blue'}}>ALL TEAMS</a><br></br>
-      <h1>Welcome to NBA</h1>
+<Routes>
+        {/* <Route path='/home' element={<Home />} /> */}
+        <Route path='/nba' element={<Nba />} />
+        <Route path='/stats' element={<Stats />} />
+        <Route path='/home' element={<Home />} />
+        <Route path='/material-ui' element={<Home />} />
 
-<Grid container>
-  <Grid sm='2'></Grid>
-  <Grid sm='8'>
-  {
-  games.map((game)=>(
-    <MyCard game={game} />
-  ))
-}
-  </Grid>
-</Grid>
+        <Route path='/players' element={<Players />} />
+        <Route path='/teams' element={<Teams />} />
+        <Route path='/seasons' element={<Seasons />} />
+        <Route path='/best-games' element={<BestGames />} />
+        <Route path='/best-players' element={<BestPlayers />} />
+
+
+      </Routes>
+
+
+
+
+
     </div>
-    {/* <Router>
-        <Routes>
-          <Route path ="/stats">
-            <Stats/>
-          </Route>
-          </Routes>
-          </Router> */}
     </>
   );
 }
