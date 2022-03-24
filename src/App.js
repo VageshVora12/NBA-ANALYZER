@@ -1,7 +1,6 @@
 import './App.css';
 import SearchAppBar from './components/Navbar';
-import React,{ useEffect,useState } from 'react';
-import { Router,Routes,Route, Link } from 'react-router-dom';
+import { Routes,Route, Link } from 'react-router-dom';
 import Nba from './components/Nba';
 import Home from './components/Home';
 import Players from './components/Players';
@@ -10,7 +9,7 @@ import Teams from './components/Teams';
 import Seasons from './components/Seasons';
 import BestGames from './components/BestGames';
 import BestPlayers from './components/BestPlayers';
-
+import Main from './components/Main';
 
 function App() {
 
@@ -36,7 +35,7 @@ function App() {
         <Route path='/stats' element={<Stats />} />
         <Route path='/home' element={<Home />} />
         <Route path='/material-ui' element={<Home />} />
-
+        <Route path='/' element={<Main />} />
         <Route path='/players' element={<Players />} />
         <Route path='/teams' element={<Teams />} />
         <Route path='/seasons' element={<Seasons />} />
