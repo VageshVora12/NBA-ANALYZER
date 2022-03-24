@@ -1,5 +1,4 @@
-import React,{ useEffect } from 'react';
-import {getStats} from '../api/Api';
+import React from 'react';
 
 
 const Stats = ()=> {
