@@ -19,7 +19,7 @@ const MyCard = ({ game })=> {
 
                         </Grid>
                         <Grid item>
-                            <img style={{width:'85px'}} src = {'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH4HiHqenBtY7an3DrYlPoUm7xoTziNI77-EJjldDUb9EMdD_DPjK8PkBRHecsa_iheYs&usqp=CAU'} alt='vs.img couldnt load'></img>
+                            <img style={{width:'85px'}} src = {require('../images/vers.png')} alt='vs.img couldnt load'></img>
                         </Grid>
                         <Grid item>
                             <Typography variant = 'h5'>{game.visitor_team['full_name']}<br></br>Score:{game['visitor_team_score']}</Typography>
