@@ -15,7 +15,7 @@ const Home = () =>{
       getGames()
        .then((data) => {
          setGames(data.data);
-         console.log(data.data);
+        //  console.log(data.data);
          // console.log(game);
        })
        .catch((error) => console.log('ERROR: could not load data',error))
