@@ -10,6 +10,12 @@ import Seasons from './components/Seasons';
 import BestGames from './components/BestGames';
 import BestPlayers from './components/BestPlayers';
 import Main from './components/Main';
+import StatsPage from './components/StatsPage';
+import PlayerPage from './components/PlayerPage';
+import TeamPage from './components/TeamPage';
+import SeasonsPage from './components/SeasonsPage';
+
+
 
 function App() {
 
@@ -31,14 +37,14 @@ function App() {
 
 <Routes>
         {/* <Route path='/home' element={<Home />} /> */}
-        <Route path='/nba' element={<Nba />} />
-        <Route path='/stats' element={<Stats />} />
+        <Route path='/nba' element={<StatsPage />} />
+        <Route path='/stats' element={<StatsPage />} />
         <Route path='/home' element={<Home />} />
         <Route path='/material-ui' element={<Home />} />
         <Route path='/' element={<Main />} />
-        <Route path='/players' element={<Players />} />
-        <Route path='/teams' element={<Teams />} />
-        <Route path='/seasons' element={<Seasons />} />
+        <Route path='/players' element={<PlayerPage />} />
+        <Route path='/teams' element={<TeamPage />} />
+        <Route path='/seasons' element={<SeasonsPage />} />
         <Route path='/best-games' element={<BestGames />} />
         <Route path='/best-players' element={<BestPlayers />} />
 
