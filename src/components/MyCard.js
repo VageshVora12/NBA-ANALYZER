@@ -19,7 +19,7 @@ const MyCard = ({ game })=> {
 
                         </Grid>
                         <Grid item>
-                            <img style={{width:'85px'}} src = {require('../images/vers.png')} alt='vs.img couldnt load'></img>
+                            <img style={{width:'85px'}} src = {'https://media.istockphoto.com/vectors/versus-letter-logo-vs-letters-on-transparent-background-vector-of-vector-id1249328863'} alt='vs.img couldnt load'></img>
                         </Grid>
                         <Grid item>
                             <Typography variant = 'h5'>{game.visitor_team['full_name']}<br></br>Score:{game['visitor_team_score']}</Typography>
